@@ -40,9 +40,19 @@ public final class PrefUtils {
     public static void editStockPref(Context context, String symbol, Boolean add) {
         String key = context.getString(R.string.pref_stocks_key);
         Set<String> stocks = getStocks(context);
+        /*
+        for (Iterator<String> it = stocks.iterator(); it.hasNext(); ) {
+            String f = it.next();
+            if (f.equals(symbol))
+            {
+                add=false;
+                Toast.makeText(context, context.getString(R.string.invalid_stock_ticker), Toast.LENGTH_LONG).show();
+            }
+        }*/
 
         if (add) {
             stocks.add(symbol);
+
         } else {
             stocks.remove(symbol);
         }
@@ -52,6 +62,7 @@ public final class PrefUtils {
         editor.putStringSet(key, stocks);
         editor.apply();
     }
+
 
     public static void addStock(Context context, String symbol) {
         editStockPref(context, symbol, true);

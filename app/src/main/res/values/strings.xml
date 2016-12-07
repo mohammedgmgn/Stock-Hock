@@ -36,4 +36,7 @@
     <string name="toast_stock_added_no_connectivity">Symbol %s added. Will refresh when network available.</string>
     <string name="toast_no_connectivity">Will refresh when network available.</string>
 
+    <string name="invalid_stock_ticker">invalid stock ticker.</string>
+    <string name="success_stock_ticker">success stock ticker.</string>
+
 </resources>
