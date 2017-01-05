@@ -142,7 +142,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     }
 
     @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
+    public void onLoadFinished(Loader<Cursor> loader, Cursor data)
+    {
         swipeRefreshLayout.setRefreshing(false);
 
         if (data.getCount() != 0) {

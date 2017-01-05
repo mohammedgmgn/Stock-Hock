@@ -7,6 +7,7 @@
 
     <string name="chart_no_data">No data</string>
 
+    <string name="widget_title">Today\'s Market</string>
 
     <string name="pref_display_mode_title">Display Mode</string>
     <string name="pref_display_mode_key">displayMode</string>
@@ -19,8 +20,6 @@
     <string name="default_stocks_apple">AAPL</string>
     <string name="default_stocks_microsoft">MSFT</string>
     <string name="default_stocks_facebook">FB</string>
-
-
     <string name="action_change_units">@string/pref_display_mode_key</string>
 
 
@@ -38,5 +37,7 @@
 
     <string name="invalid_stock_ticker">invalid stock ticker.</string>
     <string name="success_stock_ticker">success stock ticker.</string>
+
+    <string name="empty_message">No Data is Available</string>
 
 </resources>

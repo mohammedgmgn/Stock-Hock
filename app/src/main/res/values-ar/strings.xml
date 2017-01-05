@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chart_no_data">لايوجد بيانات</string>
+    <string name="pref_display_mode_title">وضع العرض</string>
+    <string name="dialog_title">إضافة أسهم</string>
+    <string name="dialog_hint">رمز الإدخال (e.g. GOOG)</string>
+    <string name="dialog_cancel">إلغاء</string>
+    <string name="dialog_add">إضافة</string>
+
+    <string name="error_no_network">أي شبكة اتصال! سيتم تحميل المؤشر الأسهم عندما تتوفر الشبكة.</string>
+    <string name="error_no_stocks">وأضافت يوجد مخزون! اضغط على زر عمل العائمة لإضافة واحد.</string>
+
+    <string name="toast_no_connectivity">سيتم تحديث عندما شبكة المتاحة.</string>
+
+    <string name="describe_floatingActionButton">إضافة رمز السهم</string>
+    <string name="invalid_stock_ticker">مؤشر الأسهم غير صالح </string>
+    <string name="success_stock_ticker">تم اضافة الأسهم بنجاح </string>
+
+</resources>

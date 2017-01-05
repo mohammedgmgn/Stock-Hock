@@ -67,10 +67,12 @@ public final class QuoteSyncJob {
             ArrayList<ContentValues> quoteCVs = new ArrayList<>();
             while (iterator.hasNext()) {
                 final String symbol = iterator.next();
-                Stock stock = quotes.get(symbol);
-                StockQuote quote = stock.getQuote();
 
                 try {
+
+                    Stock stock = quotes.get(symbol);
+                    StockQuote quote = stock.getQuote();
+
                     float price = quote.getPrice().floatValue();
                     float change = quote.getChange().floatValue();
                     float percentChange = quote.getChangeInPercent().floatValue();
@@ -108,7 +110,7 @@ public final class QuoteSyncJob {
                         @Override
                         public void run() {
                         PrefUtils.editStockPref(context,symbol,false);
-                            Toast.makeText(context, context.getString(R.string.invalid_stock_ticker)+" "+symbol, Toast.LENGTH_SHORT).show();
+                            displayInvalidToast(context,symbol);
 
 
                         }
@@ -121,14 +123,14 @@ public final class QuoteSyncJob {
             Timber.e(exception, "Error fetching stock quotes");
         }
     }
-    public static void displaySuccessToast(Context context) {
-        Toast.makeText(context, context.getString(R.string.success_stock_ticker), Toast.LENGTH_LONG).show();
+
+    public static void displayValidToast(Context context,String symbol) {
+        Toast.makeText(context, R.string.success_stock_ticker, Toast.LENGTH_SHORT).show();
 
     }
 
-
-    public static void displayInvalidToast(Context context) {
-        Toast.makeText(context, context.getString(R.string.invalid_stock_ticker), Toast.LENGTH_LONG).show();
+    public static void displayInvalidToast(Context context,String symbol) {
+        Toast.makeText(context, context.getString(R.string.invalid_stock_ticker)+" "+symbol, Toast.LENGTH_SHORT).show();
 
     }
 
