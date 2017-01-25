@@ -16,4 +16,5 @@
     <string name="invalid_stock_ticker">مؤشر الأسهم غير صالح </string>
     <string name="success_stock_ticker">تم اضافة الأسهم بنجاح </string>
 
+
 </resources>

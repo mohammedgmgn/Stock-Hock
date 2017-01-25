@@ -37,7 +37,13 @@
 
     <string name="invalid_stock_ticker">invalid stock ticker.</string>
     <string name="success_stock_ticker">success stock ticker.</string>
+    <string name="describe_floatingActionButton">Add Stock</string>
 
     <string name="empty_message">No Data is Available</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Sympol_name">Sympol</string>
+
 
 </resources>
