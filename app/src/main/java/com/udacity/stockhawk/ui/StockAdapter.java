@@ -134,7 +134,6 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
             Intent intent =new Intent(context,DetailActivity.class);
             intent.putExtra("Data",cursor.getString(Contract.Quote.POSITION_HISTORY));
             intent.putExtra(context.getString(R.string.Sympol_name), cursor.getString(Contract.Quote.POSITION_SYMBOL));
-
             context.startActivity(intent);
         }
 
