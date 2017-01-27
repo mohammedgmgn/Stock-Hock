@@ -17,6 +17,7 @@ This will involve finding and handling error cases, adding accessibility feature
   <img src="/screenshot/Screenshot_2017-01-27-10-05-03.png?" width="250"/>
   <img src="/screenshot/Screenshot_2017-01-27-10-05-10.png" width="250"/>  
    <img src="/screenshot/widget.png"width="250"/>  
+   <img src="/screenshot/Screenshot_2017-01-27-10-05-37.png"width="250"/>  
 </p>
 
 
