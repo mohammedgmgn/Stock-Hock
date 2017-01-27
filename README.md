@@ -12,6 +12,7 @@ This will involve finding and handling error cases, adding accessibility feature
 * Allowing app to be localized for distribution in other countries
 * Handling error cases in Android
 * Adding widgets to enhance user experience
+
 # [Screenshots](https://github.com/mohammedgmgn/Stock-Hock/tree/master/screenshot)
 <p align="center">
   <img src="/screenshot/Screenshot_2017-01-27-10-05-03.png?" width="250"/>
