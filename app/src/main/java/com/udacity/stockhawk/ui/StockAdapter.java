@@ -66,8 +66,6 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
     public void onBindViewHolder(StockViewHolder holder, int position) {
 
         cursor.moveToPosition(position);
-
-
         holder.symbol.setText(cursor.getString(Contract.Quote.POSITION_SYMBOL));
         holder.price.setText(dollarFormat.format(cursor.getFloat(Contract.Quote.POSITION_PRICE)));
 
@@ -91,6 +89,10 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
             holder.change.setText(percentage);
         }
 
+               //Toast.makeText(context,"stock added succesfully",Toast.LENGTH_SHORT).show();
+
+
+
 
     }
 
@@ -110,7 +112,7 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
 
     class StockViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        @BindView(R.id.stock_symbol)
+        @BindView(R.id.symbol)
         TextView symbol;
 
         @BindView(R.id.price)
@@ -134,6 +136,10 @@ class StockAdapter extends RecyclerView.Adapter<StockAdapter.StockViewHolder> {
             Intent intent =new Intent(context,DetailActivity.class);
             intent.putExtra("Data",cursor.getString(Contract.Quote.POSITION_HISTORY));
             intent.putExtra(context.getString(R.string.Sympol_name), cursor.getString(Contract.Quote.POSITION_SYMBOL));
+            intent.putExtra("price", "$" + String.format("%.2f", cursor.getDouble(Contract.Quote.POSITION_PRICE)));
+            intent.putExtra("abschange", String.format("%.2f", cursor.getDouble(Contract.Quote.POSITION_ABSOLUTE_CHANGE)));
+            intent.putExtra("perchange", String.format("%.2f", cursor.getDouble(Contract.Quote.POSITION_PERCENTAGE_CHANGE)));
+
             context.startActivity(intent);
         }
 

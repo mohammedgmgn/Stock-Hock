@@ -1,0 +1,10 @@
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp"
+    android:minHeight="180dp"
+    android:updatePeriodMillis="0"
+    android:initialLayout="@layout/stock_widget"
+    android:initialKeyguardLayout="@layout/stock_widget"
+    android:resizeMode="horizontal|vertical"
+    android:widgetCategory="home_screen"
+    android:previewImage="@drawable/stocks_widget_preview">
+</appwidget-provider>

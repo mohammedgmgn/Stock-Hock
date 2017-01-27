@@ -29,7 +29,7 @@
         <provider
             android:name=".data.StockProvider"
             android:authorities="com.udacity.stockhawk"
-            android:exported="false" />
+            android:exported="true" />
 
         <service
             android:name=".sync.QuoteJobService"
@@ -37,24 +37,32 @@
             android:exported="true"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <receiver
-            android:name=".widget.QuoteWidgetProvider"
-            android:label="@string/widget_title">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-                <action android:name="com.udacity.stockhawk.ACTION_DATA_UPDATED" />
-            </intent-filter>
+        <activity android:name=".ui.DetailActivity">
 
             <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/widget_info" />
-        </receiver>
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ui.MainActivity" />
+        </activity>
         <service
-            android:name=".widget.QuoteWidgetRemoteViewsService"
-            android:enabled="false"
-            android:exported="false"
-            android:permission="android.permission.BIND_REMOTEVIEWS" />
-        <activity android:name=".ui.DetailActivity"></activity>
+            android:name=".widget.StockWidgetService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <service android:name=".widget.StockWidgetListService"
+            android:permission="android.permission.BIND_REMOTEVIEWS"/>
+
+        <receiver android:name=".widget.StockWidgetProvider"
+            android:label="Today's Market"
+            >
+
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.ACTION_WIDGET_UPDATED"/>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/stock_widget_provider_info" />
+        </receiver>
+
     </application>
 
 </manifest>

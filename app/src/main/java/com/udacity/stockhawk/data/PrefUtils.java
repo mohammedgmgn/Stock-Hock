@@ -3,6 +3,7 @@ package com.udacity.stockhawk.data;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.widget.Toast;
 
 import com.udacity.stockhawk.R;
 
@@ -42,8 +43,6 @@ public final class PrefUtils {
         Set<String> stocks = getStocks(context);
         if (add) {
             stocks.add(symbol);
-
-
         } else {
             stocks.remove(symbol);
         }

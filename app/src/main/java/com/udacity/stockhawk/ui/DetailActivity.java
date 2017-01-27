@@ -31,12 +31,18 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
+           getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+           getSupportActionBar().setDisplayShowHomeEnabled(true);
         Intent intent = getIntent();
         String Historicaldata= intent.getStringExtra("Data");
         String [] HistoricaldataArray=Historicaldata.split("\\r?\\n");
         String symbolText = intent.getStringExtra(getString(R.string.Sympol_name));
-        setTitle(symbolText);
+        String price = intent.getStringExtra("price");
+        String abschange = intent.getStringExtra("abschange");
+        String perchange = intent.getStringExtra("perchange");
 
+        setTitle(symbolText);
+        graph.setTitle(price);
         fillGraph(HistoricaldataArray);
     }
 
@@ -45,8 +51,8 @@ public class DetailActivity extends AppCompatActivity {
         Xs = new ArrayList<Double>();
         for (int i = 0; i < historicaldataArray.length; i++) {
             String pair[] = historicaldataArray[i].split(", ");
-            Double X = Double.valueOf(pair[0]);
             Double price = Double.valueOf(pair[1]); //y
+            Double X = Double.valueOf(pair[0]);
             Xs.add(X/100000000); //x's
             priceArray.add(price); //y's
         }
@@ -60,13 +66,17 @@ public class DetailActivity extends AppCompatActivity {
             DataPoint point=new DataPoint(X,price);
             series.appendData(point,true,maxRange,false);
                     }
-        designgraph();
+        designGraph();
     }
-    private void designgraph(){
+    private void designGraph(){
         series.setThickness(5);
         series.setDrawBackground(true);
         series.setColor(Color.parseColor("#7C4DFF"));
         series.setBackgroundColor(Color.parseColor("#9E9E9E"));
+       // graph.getViewport().setScrollable(true); // enables horizontal scrolling
+        //graph.getViewport().setScrollableY(true); // enables vertical scrolling
+       // graph.getViewport().setScalable(true); // enables horizontal zooming and scrolling
+      //  graph.getViewport().setScalableY(true); // enables vertical zooming and scrolling
         graph.addSeries(series);
 
 
